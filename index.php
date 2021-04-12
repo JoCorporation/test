@@ -1,0 +1,220 @@
+
+<?php
+				if(isset($_POST['formsend'])){
+
+					
+
+					$header="MIME-Version: 1.0\r\n";
+					$header.='From:"gmail.com"<vvertimo@gmail.com>'."\n";
+					$header.='Content-Type:text/html; charset="uft-8"'."\n";
+					$header.='Content-Transfer-Encoding: 8bit';
+
+function message1($nom, $prenom, $email, $message){
+	return <<<HTML
+				<html>
+					<body>
+						<div>
+							<h1>Nouvelle Commande de {$nom} {$prenom} </h1><br />
+							<p></p>Son mail est {$email}<br />
+							<p>{$message}}</p>
+							
+						</div>
+					</body>
+				</html>
+HTML;
+		}
+					
+
+
+
+					mail("vvertimo@gmail.com", "New Message Contacte", message1($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['message']), $header);
+
+				}
+			 ?>
+<!DOCTYPE html>
+<html lang="fr">
+
+
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoCorp</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Custom-Files -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<!-- bannière principale -->
+		
+			<!-- haut de page -->
+			<header>
+				<scroll-container>
+					<scroll-page id="accueil">
+				<div id="gros" class="tittre">
+					<!-- numero de telephone -->
+
+					<!-- logo -->
+					<h1 class="t"><img src="logo.jpg" class="img"> JoCorp</h1>
+				</div>
+				</scroll-page>
+				</scroll-container>
+
+			</header>
+			<!-- haut de page -->
+			<!-- menu de navigation -->
+			
+					
+					<ul class="nav">
+						<li><a  href="index.php #accueil">Accueil</a></li>
+						<li><a   href="#boutique">Boutique</a></li>
+						<li><a   href="#contact">Contact</a></li>
+						
+
+					</ul>
+
+	<div id="qui_nous" class="t">
+		<h1 id="qui" class="t">Qui sommes-nous ?</h1>
+		<div class="azer">
+
+			<p>
+				
+			</p></br>
+			<p>
+				JoCorporation, qu’est-ce que c’est ?
+- C’est une entreprise de développement de bots, tu peux prendre un forfait gratuit (qui n’est pas customisable) ou un forfait payant (qui est customisable).
+			</p></br>
+			<p>En quel langage sont programmés les bots ?
+- Ils sont programmés en Python par notre équipe.</p></br>
+			<p>En combien de temps serai-je livré ?
+- Cela dépend de la disponibilité de notre équipe... il peut arriver que ton bot soit fait rapidement mais parfois il faudra attendre jusqu'à 4/5 semaines...</p></br>
+			<p>Mon bot sera-t-il hébergé si je prends un forfait payant/gratuit ? 
+- Non, ce sera à toi de prendre un hébergeur.</p></br>
+			<p>Pourquoi cette entreprise et pas une autre ?
+- Car nous sommes fiables. Certes une livraison peut prendre du temps, mais vous serez toujours livrés !</p></br></br>
+			
+		</div>	
+	</div>
+			
+
+		<section class="bot">
+			<div class="botcontent">
+				<h1 class="t" id="qui1">Bot public</h1>
+				<p>Voici les bots publics que JoCorporation vous conseille :</p>
+				<div class="botannonce">
+					<div class="botpublic">
+						<a href="https://discord.com/oauth2/authorize?client_id=812271658877583390&scope=bot&permissions=2146958847"><img class="botimg" src="https://cdn.discordapp.com/avatars/812271658877583390/ca7cfa99eea62c8e7e60bf07c213d6ab.png"><p>Bot Minou</p></a>
+					</div>
+					<div class="botpublic">
+						<a href="https://discord.com/oauth2/authorize?client_id=812271658877583390&scope=bot&permissions=2146958847"><img class="botimg" src="logotransparant1.png"><p>Jocorp</p></a>
+					</div>
+				</div>
+			</div>
+		</section>
+					
+				
+		
+	
+		
+		<div>
+			<scroll-container>
+					<scroll-page id="boutique">
+			<!-- //menu de navigation -->
+						<h1 id="qui">Nos produits</h1>
+					</scroll-page>
+			</scroll-container>
+			<p></p>
+			
+			<div class="centre3">
+				<div id="contenue">
+					
+						<a href="Pack Gratuit.php" class="pack1 nj">Pack gratuit</a>
+					
+						<a href="Pack Payant.php" class="pack2 nj">Pack payant </br></br> 10€</a>
+					
+				</div>
+			</div>
+		</div>
+
+		<scroll-container>
+					<scroll-page id="contact">
+			<!-- //menu de navigation -->
+						<h1 class="t" id="qui1">Contactez-nous :</h1>
+					</scroll-page>
+			</scroll-container>
+
+		
+
+
+	<div class="ajust">
+		<section class="contact">
+			
+				
+				
+		
+				<div class="container">
+					<div class="contactForm">
+						<form method="POST">
+							<h2 id="qui" class="t">Envoyez votre message</h2>
+							<div class="inputBox">
+								<input type="text" name="" id="nom" required="">
+								<span>Nom</span>
+							</div>
+							<div class="inputBox">
+								<input type="text" name="" id="prenom" required="">
+								<span>Prénom</span>
+							</div>
+							<div class="inputBox">
+								<input type="text" name="" id="email" required="">
+								<span>E-mail</span>
+							</div>
+							<div class="inputBox">
+								<textarea required="" id="message"></textarea>
+								<span>Votre Message ...</span>
+							</div>
+							<div class="inputBox">
+								<input type="submit" name="" value="Envoyer">
+							</div>
+						</form>
+					</div>
+
+				</div>
+			
+			
+			
+		</section>
+	</div>	
+		
+		
+			
+						
+
+			
+			
+		<!-- //Pied de page -->
+		<footer>
+			<div class="footer-content">
+				<h3>Spyrou</h3>
+				<p>Un bon site Web est toujours "en construction" !</p>
+				<ul class="socials">
+					<li>Notre Discord : <a href="#"><i class="discord">JoCorporation</i></a></li>
+					<li>Discord d'un Hébergeur gratuit : <a href="#"><i class="discord">Nepust</i></a></li>
+					
+				</ul>
+			</div>
+			<div class="footer-bottom">
+				<p>Copyright &copy;2021 Spyrou. Designed By <span>Spyrou</span></p>
+			</div>
+		</footer>
+		<!-- Copyright -->
+		
+		
+		
+
+	</body>
+
+</html>
