@@ -1,35 +1,4 @@
-			<?php
-				if(isset($_POST['formsend'])){
 
-					
-
-					$header="MIME-Version: 1.0\r\n";
-					$header.='From:"gmail.com"<vvertimo@gmail.com>'."\n";
-					$header.='Content-Type:text/html; charset="uft-8"'."\n";
-					$header.='Content-Transfer-Encoding: 8bit';
-
-function message($nom, $prenom, $email, $nombot, $logobot, $discord){
-	return <<<HTML
-				<html>
-					<body>
-						<div>
-							<h1>Nouvelle Commande de {$nom} {$prenom} </h1><br />
-							<p></p>Son mail est {$email}<br />
-							<p>Il veut un bot qui s'appelle {$nombot} avec comme logo {$logobot}</p>
-							<p>Son discord est {$discord}</p>
-						</div>
-					</body>
-				</html>
-HTML;
-		}
-					
-
-
-
-					mail("vvertimo@gmail.com", "New Commande", message($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['nombot'], $_POST['logobot'], $_POST['discord']), $header);
-
-				}
-			 ?>
 <!DOCTYPE html>
 <html lang="fr">
 
