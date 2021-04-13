@@ -1,40 +1,4 @@
-			<?php
-				if(isset($_POST['formsend'])){
 
-					
-
-					$header="MIME-Version: 1.0\r\n";
-					$header.='From:"gmail.com"<vvertimo@gmail.com>'."\n";
-					$header.='Content-Type:text/html; charset="uft-8"'."\n";
-					$header.='Content-Transfer-Encoding: 8bit';
-
-function message($nom, $prenom, $email, $nombot, $logobot, $discord, $prefix, $commandesimple1, $commandesimple2, $commandesimple3, $commandesimple4){
-	return <<<HTML
-				<html>
-					<body>
-						<div>
-							<h1>Nouvelle Commande de {$nom} {$prenom} </h1><br />
-							<p></p>Son mail est {$email}<br />
-							<p>Il veut un bot qui s'appelle {$nombot} avec comme logo {$logobot} et comme préfix {$prefix}</p>
-							<p>Son discord est {$discord}</p><br /><br />
-							<h1>Description des commande :</h1><br /><br />
-							<p>Commande 1: {$commandesimple1}</p><br /><br />
-							<p>Commande 2: {$commandesimple2}</p><br /><br />
-							<p>Commande 3: {$commandesimple3}</p><br /><br />
-							<p>Commande 4: {$commandesimple4}</p><br /><br />
-						</div>
-					</body>
-				</html>
-HTML;
-		}
-					
-
-
-
-					mail("vvertimo@gmail.com", "New Commande", message($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['nombot'], $_POST['logobot'], $_POST['discord'], $_POST['prefix'], $_POST['commandesimple1'], $_POST['commandesimple2'], $_POST['commandesimple3'], $_POST['commandesimple4']), $header);
-
-				}
-			 ?>
 <!DOCTYPE html>
 <html lang="fr">
 
